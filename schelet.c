@@ -63,6 +63,7 @@ void printSudoku(partialSolution ps)
                   if (ps.sudokuMatrix[i][j] < 10)
                         printf("%d ", ps.sudokuMatrix[i][j]);
                   else // modalitate speciala de afisare pentru matricile mai mari de 9x9
+                        //special mode to print for matrices greater than 9x9
                         printf("%c ", 'A' + ps.sudokuMatrix[i][j] % 10);
             printf("\n");
       }
@@ -222,6 +223,7 @@ void backtracking(partialSolution PS)
 int main()
 {
       // Atentie la N si la modificarea fisierului!
+      //Beware of N and the input file when run the program
       partialSolution PS = readSudoku("input.txt");
       PS.find = 0;
       backtracking(PS);
